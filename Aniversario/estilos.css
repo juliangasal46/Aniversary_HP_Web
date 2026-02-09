@@ -1,0 +1,228 @@
+body {
+  margin: 0;
+  background: #000;
+  display: flex;
+  justify-content: center;
+}
+
+.galeria {
+  position: relative;
+  width: 72%; /* ajusta según necesites */
+}
+
+.fondo {
+  width: 100%;
+  display: block;
+}
+
+
+[class^="c"] img {
+  position: relative;        /* NUEVO */
+  z-index: 1;                /* NUEVO */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  aspect-ratio: 3 / 4;
+  transition: filter 0.3s;
+}
+
+[class^="c"]:hover img {
+    height: 100%;
+    width: 100%;
+    filter: grayscale(0%);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+[class^="c"]::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  background: url('/Gif/marcoparticulas.gif') center/contain no-repeat;
+  opacity: 0;
+  z-index: 2;                /* por encima de la imagen */
+  pointer-events: none;
+  transition: opacity 0.3s;
+   box-shadow: 0 0 12px rgba(224, 202, 4, 0.6);
+}
+
+
+[class^="c"]:hover::before {
+  opacity: 1;
+}
+
+
+[class^="c"] {
+  position: absolute;
+  border: 1px solid #333; /* opcional */
+   overflow: hidden;
+}
+
+
+/* =====================
+   POSICIONES DE CUADROS
+   (valores aproximados,
+   puedes afinarlos)
+   ===================== */
+
+/* Fila superior izquierda */
+
+
+
+.c1 { 
+    border: 1px solid #333; /* Grosor, Estilo, Color */
+    top: 5.5%; 
+    left: 25.7%; 
+    width:6.2%;
+    height: 11%;
+}
+
+.c2 { 
+    border: 1px solid #333; /* Grosor, Estilo, Color */
+    top: 5.4%; 
+    left: 35.6%; 
+    width:5.6%;
+    height: 11.2%;
+}
+
+.c3 { 
+    border: 1px solid #333; /* Grosor, Estilo, Color */
+    top: 13%; 
+    left: 45.8%; 
+    width:7.3%;
+    height: 18%;
+}
+
+.c4 { 
+    border: 1px solid #333; /* Grosor, Estilo, Color */
+    top: 15%; 
+    left: 61.2%; 
+    width:8.3%;
+    height: 23.3%;
+}
+
+.c5 { 
+    border: 1px solid #333; /* Grosor, Estilo, Color */
+    top: 18.5%; 
+    left: 74%; 
+    width:7.3%;
+    height: 20%;
+}
+
+.c6 { 
+    border: 1px solid #333; /* Grosor, Estilo, Color */
+    top: 26%; 
+    left: 86.3%; 
+    width:6.4%;
+    height: 15.5%;
+}
+
+.c7 { 
+    border: 1px solid #333; /* Grosor, Estilo, Color */
+    top: 16.2%; 
+    left: 15%; 
+    width:6.6%;
+    height: 13.4%;  
+}
+
+.c8 { 
+    border: 1px solid #333; /* Grosor, Estilo, Color */
+    top: 21.5%; 
+    left: 25.2%; 
+    width:7%;
+    height: 16.6%;
+}
+
+.c9 { 
+    border: 1px solid #333; /* Grosor, Estilo, Color */
+    top: 21.5%; 
+    left: 36.2%; 
+    width:5.6%;
+    height: 11.4%;
+}
+
+.c10 { 
+    border: 1px solid #333; /* Grosor, Estilo, Color */
+    top: 36%; 
+    left: 12.3%; 
+    width:8.5%;
+    height: 18.2%;
+}
+
+.c11 { 
+    border: 1px solid #333; /* Grosor, Estilo, Color */
+    top: 43.4%; 
+    left: 24.9%;  
+    width:7.5%;
+    height: 14%;
+}
+
+.c12 { 
+    border: 1px solid #333; /* Grosor, Estilo, Color */
+    top: 38.2%; 
+    left: 37.2%; 
+    width:5.2%;
+    height: 11.5%;
+}
+
+.c13 { 
+    border: 1px solid #333; /* Grosor, Estilo, Color */
+    top: 54.7%; 
+    left: 37.3%; 
+    width:5%;
+    height: 9.6%;
+}
+
+.c14 { 
+    border: 1px solid #333; /* Grosor, Estilo, Color */
+    top: 38%; 
+    left: 46.5%; 
+    width:9.8%;
+    height: 16.8%;
+}
+
+.c15 { 
+    border: 1px solid #333; /* Grosor, Estilo, Color */
+    top: 44.8%; 
+    left: 60.5%;  
+    width:8.2%;
+    height: 14.9%;
+}
+
+.c16 { 
+    border: 1px solid #333; /* Grosor, Estilo, Color */
+    top: 44.3%; 
+    left: 73.8%; 
+    width:6.5%;
+    height: 14.5%;
+}
+
+.c17 { 
+    border: 1px solid #333; /* Grosor, Estilo, Color */
+    top: 62%; 
+    left: 13.4%; 
+    width:8.5%;
+    height: 18%;
+}
+
+.c18 { 
+    border: 1px solid #333; /* Grosor, Estilo, Color */
+    top: 62%; 
+    left: 24.5%; 
+    width:8%;
+    height: 17.8%;
+}
+
+.c19{ 
+    border: 1px solid #333; /* Grosor, Estilo, Color */ 
+    top: 50%; 
+    left: 85.4%; 
+    width:7%; 
+    height: 14.5%; 
+
+    /*object-fit: cover; */
+     border-radius: 40% 30% 0 0; /* solo arriba */
+    /* overflow: hidden; */
+}
