@@ -17,14 +17,16 @@ body {
 
 
 [class^="c"] img {
-  position: relative;        /* NUEVO */
-  z-index: 1;                /* NUEVO */
+  position: relative;        
+  z-index: 1;                
   width: 100%;
   height: 100%;
   object-fit: cover;
   filter: grayscale(100%);
   aspect-ratio: 3 / 4;
-  transition: filter 0.3s;
+  transition:   
+    transform 0.3s ease,
+    filter 0.3s ease;
 }
 
 [class^="c"]:hover img {
@@ -34,18 +36,18 @@ body {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    transform: scale(0.88);
 }
 
 [class^="c"]::before {
   content: "";
   position: absolute;
   inset: -6px;
-  background: url('/Gif/marcoparticulas.gif') center/contain no-repeat;
   opacity: 0;
   z-index: 2;                /* por encima de la imagen */
   pointer-events: none;
   transition: opacity 0.3s;
-   box-shadow: 0 0 12px rgba(224, 202, 4, 0.6);
+  box-shadow: 0 0 200px rgba(224, 202, 4, 0.6);
 }
 
 
@@ -56,10 +58,9 @@ body {
 
 [class^="c"] {
   position: absolute;
-  border: 1px solid #333; /* opcional */
-   overflow: hidden;
+  border: 1px solid #333;
+  overflow: visible;
 }
-
 
 /* =====================
    POSICIONES DE CUADROS
@@ -213,16 +214,43 @@ body {
     left: 24.5%; 
     width:8%;
     height: 17.8%;
+    overflow:hidden;
 }
 
-.c19{ 
-    border: 1px solid #333; /* Grosor, Estilo, Color */ 
-    top: 50%; 
-    left: 85.4%; 
-    width:7%; 
-    height: 14.5%; 
 
-    /*object-fit: cover; */
-     border-radius: 40% 30% 0 0; /* solo arriba */
-    /* overflow: hidden; */
+.c19 {
+  position: absolute;
+  top: 50%; 
+  left: 85.4%; 
+  width: 7%; 
+  height: 14.5%; 
+  border-radius: 40% 30% 0 0;
+  overflow: hidden; 
+  border: 1px solid #333;
+}
+
+.c19-inner {
+  position: absolute;
+  top: -12px;  /* desplaza un poco para mostrar shadow/GIF */
+  left: -12px;
+  width: calc(100% + 24px);
+  height: calc(100% + 24px);
+  transition: transform 0.3s ease;
+}
+
+.c19-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 0.3s, transform 0.3s;
+}
+
+.c19-inner:hover::before {
+  opacity: 1;
+}
+
+.c19-inner:hover img {
+  filter: grayscale(0%);
+  transform: scale(0.88);
 }
