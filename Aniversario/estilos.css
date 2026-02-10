@@ -63,6 +63,39 @@ body {
 }
 
 /* =====================
+EVENTO DE CLICK EN CUALQUIER FOTO
+=======================/*
+
+/* Fondo oscuro */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(40, 40, 40, 0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Imagen centrada */
+#overlay img {
+  max-width: 85%;
+  max-height: 85%;
+  box-shadow: 0 0 25px black;
+  border-radius: 6px;
+  cursor: zoom-out;
+}
+
+/* Cursor en los cuadros */
+.galeria img {
+  cursor: pointer;
+}
+
+
+/* =====================
    POSICIONES DE CUADROS
    (valores aproximados,
    puedes afinarlos)
@@ -254,3 +287,4 @@ body {
   filter: grayscale(0%);
   transform: scale(0.88);
 }
+
