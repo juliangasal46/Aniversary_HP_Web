@@ -90,8 +90,13 @@ EVENTO DE CLICK EN CUALQUIER FOTO
 }
 
 /* Cursor en los cuadros */
-.galeria img {
+.galeria div img {
   cursor: pointer;
+}
+
+#imagenGrande:hover {
+    border:2px solid red;
+    opacity: 0.4;
 }
 
 

@@ -2,7 +2,7 @@ const overlay = document.getElementById("overlay");
 const imagenGrande = document.getElementById("imagenGrande");
 
 // Selecciona todos los cuadros
-const imagenes = document.querySelectorAll(".galeria img");
+const imagenes = document.querySelectorAll(".galeria div img");
 
 imagenes.forEach(img => {
   img.addEventListener("click", () => {
