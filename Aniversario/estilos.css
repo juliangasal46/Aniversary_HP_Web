@@ -130,6 +130,26 @@ EVENTO DE CLICK EN CUALQUIER FOTO
     opacity: 0.4;
 }
 
+/* Carrusel de imagenes*/
+#overlay button {
+  position: absolute;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 50px;
+  cursor: pointer;
+  padding: 20px;
+  user-select: none;
+}
+
+#prev {
+  left: 5%;
+}
+
+#next {
+  right: 5%;
+}
+
 
 /* =====================
    POSICIONES DE CUADROS
