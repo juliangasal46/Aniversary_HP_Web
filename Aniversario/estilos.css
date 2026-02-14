@@ -15,7 +15,6 @@ body {
   display: block;
 }
 
-
 [class^="c"] img {
   position: relative;        
   z-index: 1;                
@@ -44,7 +43,7 @@ body {
   position: absolute;
   inset: -6px;
   opacity: 0;
-  z-index: 2;                /* por encima de la imagen */
+  z-index: 2;                
   pointer-events: none;
   transition: opacity 0.3s;
   box-shadow: 0 0 200px rgba(224, 202, 4, 0.6);
@@ -60,6 +59,38 @@ body {
   position: absolute;
   border: 1px solid #333;
   overflow: visible;
+}
+
+.fotoMaga .magaHover {
+  display: none;
+}
+
+.galeria:has([class^="c"]:hover) .fotoMaga .magaNoHover {
+  display: none;
+}
+
+.galeria:has([class^="c"]:hover) .fotoMaga .magaHover {
+  display: block;
+}
+
+
+/* ===========================
+COLOCADO DE LA FOTO DE LA MAGA
+=============================*/
+
+.fotoMaga {
+  position: absolute;
+  top: 55%; 
+  left: 46.5%; 
+  width:20%;
+  height: 16.8%;    
+  z-index: 0;      
+}
+
+.fotoMaga img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* =====================
