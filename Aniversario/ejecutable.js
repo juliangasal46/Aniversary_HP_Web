@@ -49,3 +49,59 @@ btnPrev.addEventListener("click", (e) => {
 overlay.addEventListener("click", () => {
   overlay.style.display = "none";
 });
+
+
+// para el haz de luz del ratón cuando hace hover simulando magia
+
+const light = document.querySelector('.cursor-light');
+
+document.addEventListener('mousemove', (e) => {
+  const offsetX = light.offsetWidth / 2;
+  const offsetY = light.offsetHeight / 2;
+  light.style.left = `${e.clientX - offsetX}px`;
+  light.style.top = `${e.clientY - offsetY}px`;
+});
+
+
+const elements = document.querySelectorAll('[class^="c"]');
+
+elements.forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    light.style.display = 'block';
+  });
+  el.addEventListener('mouseleave', () => {
+    light.style.display = 'none';
+  });
+});
+
+
+
+const maga = document.querySelector(".fotoMaga");
+
+const magaImgs = {
+  derecha: {
+    normal: "Fotos/magaNoHover.png",
+    hover: "Fotos/magaHover.png"
+  },
+  izquierda: {
+    normal: "Fotos/magaNoHoverIzquierda.png",
+    hover: "Fotos/magaHoverIzquierda.png"
+  }
+};
+
+// Función para cambiar las imágenes
+function cambiarMaga(lado) {
+  const imgs = magaImgs[lado];
+  maga.querySelector(".magaNoHover").src = imgs.normal;
+  maga.querySelector(".magaHover").src = imgs.hover;
+}
+
+// Detectar movimiento del mouse y determinar lado
+document.addEventListener("mousemove", (e) => {
+  const mitad = window.innerWidth / 2;
+  if (e.clientX < mitad) {
+    cambiarMaga("izquierda");
+  } else {
+    cambiarMaga("derecha");
+  }
+});

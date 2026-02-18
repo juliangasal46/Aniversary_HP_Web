@@ -3,8 +3,27 @@ body {
   background: #000;
   display: flex;
   justify-content: center;
-  cursor: url("Fotos/baritaHover.png") 0 0, auto;
+  cursor: url("Fotos/baritaSinHover.png") 0 0, auto;
 }
+
+/*==================
+Para el cursor y su haz de luz
+===================*/
+
+.cursor-light {
+  position: fixed;
+  pointer-events: none;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(0, 217, 202, 0.953) 0%, rgba(255,255,200,0) 100%);
+  filter: blur(15px);
+  mix-blend-mode: screen;
+  z-index: 9999;
+}
+
+/*=================
+Estilos de fondo e imagenes y cuadros
+====================*/
 
 .galeria {
   position: relative;
@@ -37,6 +56,8 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     transform: scale(0.88);
+  cursor: url("Fotos/baritaConHover.png") 0 0, auto;
+
 }
 
 [class^="c"]::before {
