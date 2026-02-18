@@ -105,3 +105,62 @@ document.addEventListener("mousemove", (e) => {
     cambiarMaga("derecha");
   }
 });
+
+
+
+const audio = document.getElementById('audioFondo');
+const playPauseBtn = document.getElementById('playPauseBtn');
+const volumenSlider = document.getElementById('volumen');
+
+// Volumen inicial
+audio.volume = 0.5;
+
+// Pausar / Reproducir
+playPauseBtn.addEventListener('click', () => {
+  if (audio.paused) {
+    audio.play();
+    playPauseBtn.textContent = 'Pausar';
+  } else {
+    audio.pause();
+    playPauseBtn.textContent = 'Continuar';
+  }
+});
+
+// Control de volumen
+volumenSlider.addEventListener('input', () => {
+  audio.volume = volumenSlider.value;
+});
+
+
+
+
+const gati = document.getElementById("gati");
+const galeria = document.querySelector(".galeria");
+
+function moverGato() {
+  const anchoGaleria = galeria.offsetWidth;
+  const anchoGato = gati.offsetWidth;
+
+  // Reinicio limpio
+  gati.style.transition = "none";
+  gati.style.opacity = "1";
+  gati.style.transform = "scaleX(1)";
+  gati.style.left = `${anchoGaleria}px`;
+
+  // Forzar reflow REAL
+  void gati.offsetWidth;
+
+  // Animación
+  gati.style.transition = "left 12s linear";
+  gati.style.left = `-${anchoGato}px`;
+}
+
+// Cuando termina el movimiento
+gati.addEventListener("transitionend", (e) => {
+  if (e.propertyName === "left") {
+    gati.style.opacity = "0";
+  }
+});
+
+// Cada 60s (puedes volver a 120000)
+setInterval(moverGato, 120000);

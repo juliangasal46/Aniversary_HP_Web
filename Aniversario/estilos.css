@@ -147,11 +147,6 @@ EVENTO DE CLICK EN CUALQUIER FOTO
   cursor: pointer;
 }
 
-#imagenGrande:hover {
-    border:2px solid red;
-    opacity: 0.4;
-}
-
 /* Carrusel de imagenes*/
 #overlay button {
   position: absolute;
@@ -170,6 +165,43 @@ EVENTO DE CLICK EN CUALQUIER FOTO
 
 #next {
   right: 5%;
+}
+
+/*=======================
+Posicion para controles de audio
+========================*/
+
+/* Controles de audio */
+.audio-controls {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 10000; /* superior a otros elementos */
+  font-family: Arial, sans-serif;
+}
+
+.audio-controls button {
+  background: #1e90ff;
+  border: none;
+  padding: 5px 10px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.audio-controls button:hover {
+  background: #0f66c1;
+}
+
+.audio-controls input[type="range"] {
+  width: 100px;
 }
 
 
@@ -366,3 +398,18 @@ EVENTO DE CLICK EN CUALQUIER FOTO
   transform: scale(0.88);
 }
 
+
+/* ================
+Gato andando
+==================*/
+
+
+#gati {
+  position: absolute;
+  bottom: 1%;
+  width: 8%;
+  left: 100%;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0;
+}
