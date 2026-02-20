@@ -163,4 +163,4 @@ gati.addEventListener("transitionend", (e) => {
 });
 
 // Cada 60s (puedes volver a 120000)
-setInterval(moverGato, 120000);
+setInterval(moverGato, 100000);
